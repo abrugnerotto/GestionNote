@@ -7,15 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClassLibraryDB
+namespace nsLibraryDB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Modules
+    public partial class Eleves
     {
-        public int numModule { get; set; }
-        public string nomModule { get; set; }
-        public Nullable<int> nbMatiere { get; set; }
+        public int numEleve { get; set; }
+        public string nomEleve { get; set; }
+        public string motDePasse { get; set; }
+        public Nullable<int> fknumModule { get; set; }
+    
+        public virtual Modules Modules { get; set; }
     }
 }

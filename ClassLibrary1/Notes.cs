@@ -7,15 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClassLibraryDB
+namespace nsLibraryDB
 {
     using System;
     using System.Collections.Generic;
     
     public partial class Notes
     {
+        public Notes()
+        {
+            this.Matieres = new HashSet<Matieres>();
+        }
+    
         public int numNotes { get; set; }
-        public string note { get; set; }
+        public int note { get; set; }
         public Nullable<int> poidsNote { get; set; }
+    
+        public virtual ICollection<Matieres> Matieres { get; set; }
     }
 }

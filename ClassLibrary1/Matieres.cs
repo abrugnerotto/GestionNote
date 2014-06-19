@@ -7,16 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClassLibraryDB
+namespace nsLibraryDB
 {
     using System;
     using System.Collections.Generic;
     
     public partial class Matieres
     {
+        public Matieres()
+        {
+            this.Modules = new HashSet<Modules>();
+        }
+    
         public int numMatiere { get; set; }
         public string nomMatiere { get; set; }
         public Nullable<int> nbNote { get; set; }
         public Nullable<int> poidsMatiere { get; set; }
+        public Nullable<int> fknumNote { get; set; }
+    
+        public virtual Notes Notes { get; set; }
+        public virtual ICollection<Modules> Modules { get; set; }
     }
 }
