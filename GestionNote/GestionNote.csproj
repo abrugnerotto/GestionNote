@@ -57,8 +57,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryDB\ClassLibraryDB.csproj">
-      <Project>{311854d4-4a6f-4fb0-99e8-8426d277bb2f}</Project>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibraryDB.csproj">
+      <Project>{0ce02376-2214-45ea-8707-9115a8b7783a}</Project>
       <Name>ClassLibraryDB</Name>
     </ProjectReference>
   </ItemGroup>

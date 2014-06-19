@@ -1,7 +1,9 @@
-﻿using System;
+﻿using nsLibraryDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 
 namespace ConsoleEcole
 {
@@ -9,7 +11,11 @@ namespace ConsoleEcole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            EcoleEntities ecoleEntities = new EcoleEntities();
+
+            Console.WriteLine(ecoleEntities.Notes.ToString());
+            List<Notes> listNotes = (from m in ecoleEntities.Notes select m);
+
             Console.ReadLine();
         }
     }
