@@ -41,6 +41,8 @@ CREATE TABLE Matieres(
 		nomMatiere VARCHAR(20) NOT NULL UNIQUE,
 		nbNote INT,
 		poidsMatiere INT
+		numModule INT,
+		FOREIGN KEY (numModule) REFERENCES Modules(numModule)
 );
 
 CREATE TABLE Notes(
