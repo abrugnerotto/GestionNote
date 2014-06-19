@@ -46,5 +46,8 @@ CREATE TABLE Matieres(
 CREATE TABLE Notes(
 		numNotes INT PRIMARY KEY,
 		note VARCHAR(20) NOT NULL,
-		poidsNote INT
+		poidsNote INT,
+		numMatiere INT
+		FOREIGN KEY (numMatiere) REFERENCES Matieres(numMatiere)
 );
+
