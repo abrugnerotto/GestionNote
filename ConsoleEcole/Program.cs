@@ -1,5 +1,6 @@
 ﻿using entityBDD;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,15 @@ namespace ConsoleEcole
             module = module.getModulesById(2);
             Console.WriteLine("Module : " + module.numModule + " " + module.nomModule + " nb de mat :" + module.nbMatiere);
 
-            Console.ReadLine();
+
+            ArrayList eleves = new ArrayList();
+            foreach (Eleve tempEleve in eleve.getEleves())
+            {
+                Console.WriteLine("Eleves : " + tempEleve.numEleve + " nom : " + tempEleve.nomEleve + " Pass :" + tempEleve.motDePasse);
+            }
+
+
+            Console.ReadLine(); 
         }
     }
 }
