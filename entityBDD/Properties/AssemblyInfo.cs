@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DBClassLib")]
+[assembly: AssemblyTitle("entityBDD")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DBClassLib")]
+[assembly: AssemblyProduct("entityBDD")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a3e210b2-9f93-429d-b898-e311c9b71262")]
+[assembly: Guid("8837b3b1-8ad5-4490-9e10-109a091bebdd")]
 
 // Version information for an assembly consists of the following four values:
 //

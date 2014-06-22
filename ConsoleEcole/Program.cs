@@ -1,4 +1,4 @@
-﻿using nsLibraryDB;
+﻿using entityBDD;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +11,9 @@ namespace ConsoleEcole
     {
         static void Main(string[] args)
         {
-            EcoleEntities ecoleEntities = new EcoleEntities();
-
-            Console.WriteLine(ecoleEntities.Notes.ToString());
-            List<Notes> listNotes = (from m in ecoleEntities.Notes select m);
+            Eleves eleves = new Eleves();
+            Console.WriteLine("Eleves 1 : "+ eleves.getFirstEleves());
+            Console.WriteLine("Eleves 4 : "+ eleves.getEleveById(4));
 
             Console.ReadLine();
         }

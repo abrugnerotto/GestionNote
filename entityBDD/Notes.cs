@@ -7,24 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace nsLibraryDB
+namespace entityBDD
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Modules
+    public partial class Notes
     {
-        public Modules()
-        {
-            this.Eleves = new HashSet<Eleves>();
-        }
-    
-        public int numModule { get; set; }
-        public string nomModule { get; set; }
-        public Nullable<int> nbMatiere { get; set; }
+        public int numNotes { get; set; }
         public Nullable<int> fknumMatiere { get; set; }
+        public int note { get; set; }
+        public int poidsNote { get; set; }
     
-        public virtual ICollection<Eleves> Eleves { get; set; }
         public virtual Matieres Matieres { get; set; }
     }
 }
