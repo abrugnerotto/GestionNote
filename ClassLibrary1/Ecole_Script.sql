@@ -1,54 +1,68 @@
 
-DROP TABLE Notes;
-DROP TABLE Matieres;
-DROP TABLE Modules;
-DROP TABLE Eleves;
+DROP TABLE Note;
+DROP TABLE Matiere;
+DROP TABLE Module;
+DROP TABLE Eleve;
 
 
 
 
-CREATE TABLE Eleves
+CREATE TABLE Eleve
 (
 		numEleve INT PRIMARY KEY IDENTITY(1,1),
 		nomEleve VARCHAR(20) NOT NULL UNIQUE,
 		motDePasse VARCHAR(20)
 );
 
-CREATE TABLE Modules
+CREATE TABLE Module
 (
 		numModule INT PRIMARY KEY IDENTITY(1,1),
-		fknumEleve INT FOREIGN KEY REFERENCES Eleves(numEleve),
 		nomModule VARCHAR(20) NOT NULL UNIQUE,
 		nbMatiere INT
 );
 
-CREATE TABLE Matieres(
+/* Table de liaison Eleve * - * Module */
+CREATE TABLE Suit
+(
+		numEleve INT FOREIGN KEY REFERENCES Eleve(numEleve),
+		numModules INT FOREIGN KEY REFERENCES Module(numModule), 
+		constraint pksuitID PRIMARY KEY(numEleve, numModules)
+);
+
+
+
+CREATE TABLE Matiere(
 		numMatiere INT PRIMARY KEY IDENTITY(1,1),
-		fknumModule INT FOREIGN KEY REFERENCES Modules(numModule),
+		fknumModule INT FOREIGN KEY REFERENCES Module(numModule),
 		nomMatiere VARCHAR(20) NOT NULL UNIQUE,
 		nbNote INT,
 		poidsMatiere INT NOT NULL CHECK(poidsMatiere BETWEEN 1 AND 100)
 );
 
-CREATE TABLE Notes(
+CREATE TABLE Note(
 		numNotes INT PRIMARY KEY IDENTITY(1,1),
-		fknumMatiere INT FOREIGN KEY REFERENCES Matieres(numMatiere),
+		fknumMatiere INT FOREIGN KEY REFERENCES Matiere(numMatiere),
 		note INT NOT NULL CHECK(note BETWEEN 1 AND 6),
 		poidsNote INT NOT NULL CHECK(poidsNote BETWEEN 1 AND 100)
 );
 
 
-INSERT INTO Eleves(nomEleve, motDePasse)
+INSERT INTO Eleve(nomEleve, motDePasse)
 VALUES ('TOTO', 'PASSO');
-INSERT INTO Eleves(nomEleve, motDePasse)
+INSERT INTO Eleve(nomEleve, motDePasse)
 VALUES ('TATI', 'PASSO');
-INSERT INTO Eleves(nomEleve, motDePasse)
+INSERT INTO Eleve(nomEleve, motDePasse)
 VALUES ('TONTON', 'PASSO');
-INSERT INTO Eleves(nomEleve, motDePasse)
+INSERT INTO Eleve(nomEleve, motDePasse)
 VALUES ('TOTOCHE', 'PASSO');
-INSERT INTO Eleves(nomEleve, motDePasse)
+INSERT INTO Eleve(nomEleve, motDePasse)
 VALUES ('TATINE', 'PASSO');
-INSERT INTO Eleves(nomEleve, motDePasse)
+INSERT INTO Eleve(nomEleve, motDePasse)
+VALUES ('TALOUCHE', 'PASSO');
+
+INSERT INTO Module(nomEleve, motDePasse)
+VALUES ('TATINE', 'PASSO');
+INSERT INTO Modul(nomEleve, motDePasse)
 VALUES ('TALOUCHE', 'PASSO');
 
 /*INSERT INTO Notes(numNotes, fknumMatiere, note, poidsNote )

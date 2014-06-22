@@ -12,17 +12,19 @@ namespace entityBDD
     using System;
     using System.Collections.Generic;
     
-    public partial class Eleves
+    public partial class Module
     {
-        public Eleves()
+        public Module()
         {
-            this.Modules = new HashSet<Modules>();
+            this.Matiere = new HashSet<Matiere>();
+            this.Eleve = new HashSet<Eleve>();
         }
     
-        public int numEleve { get; set; }
-        public string nomEleve { get; set; }
-        public string motDePasse { get; set; }
+        public int numModule { get; set; }
+        public string nomModule { get; set; }
+        public Nullable<int> nbMatiere { get; set; }
     
-        public virtual ICollection<Modules> Modules { get; set; }
+        public virtual ICollection<Matiere> Matiere { get; set; }
+        public virtual ICollection<Eleve> Eleve { get; set; }
     }
 }

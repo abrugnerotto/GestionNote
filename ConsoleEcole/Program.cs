@@ -11,9 +11,13 @@ namespace ConsoleEcole
     {
         static void Main(string[] args)
         {
-            Eleves eleves = new Eleves();
-            Console.WriteLine("Eleves 1 : "+ eleves.getFirstEleves());
-            Console.WriteLine("Eleves 4 : "+ eleves.getEleveById(4));
+            Eleve eleve = new Eleve();
+            eleve = eleve.getEleveById(4);
+            Console.WriteLine("Eleves 4 : "+ eleve.nomEleve + " Pass :" + eleve.motDePasse);
+
+            Module module = new Module();
+            module = module.getModulesById(2);
+            Console.WriteLine("Module : " + module.numModule + " " + module.nomModule + " nb de mat :" + module.nbMatiere);
 
             Console.ReadLine();
         }
